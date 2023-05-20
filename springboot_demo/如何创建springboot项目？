@@ -1,0 +1,6 @@
+1.使用spring initializer
+2.如果使用springboot2.x，则可以使用java8，如果使用springboot3.x，则只能使用java17或以上版本。
+3.建议勾选的dependencies：
+	(1) Spring Web
+	(2) MySQL Driver
+	(3) MyBatis Framework
