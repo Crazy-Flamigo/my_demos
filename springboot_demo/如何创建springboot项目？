@@ -3,4 +3,4 @@
 3.建议勾选的dependencies：
 	(1) Spring Web
 	(2) MySQL Driver
-	(3) MyBatis Framework
+	(3) MyBatis Framework（使用MyBatis Plus 可以不选）

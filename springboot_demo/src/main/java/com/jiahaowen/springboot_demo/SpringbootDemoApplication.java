@@ -14,11 +14,4 @@ public class SpringbootDemoApplication {
         SpringApplication.run(SpringbootDemoApplication.class, args);
     }
 
-    /*//解析引导类功能
-    public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(SpringbootDemoApplication.class, args);
-        Object bean = ctx.getBean(SpringbootDemoApplication.class);
-        System.out.println("Bean info =======>"+bean);
-    }
-    */
 }

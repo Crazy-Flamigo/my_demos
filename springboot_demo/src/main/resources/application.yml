@@ -31,12 +31,17 @@ spring:
     url: jdbc:mysql://localhost/springboot_demo_db
     username: root
     password: mysqlrootpassword
+    type: com.alibaba.druid.pool.DruidDataSource
 
 
-
-
-
-
+#Mybatis Plus Configurations
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tb_ #数据表前缀
+      id-type: auto #数据自增策略
+  #configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启MP日志，上线运行时不要开
 
 #Coustom
 # country: China
@@ -45,4 +50,5 @@ spring:
 # hobby:
 #   - sing
 #   - dance
+
 #   - rap
