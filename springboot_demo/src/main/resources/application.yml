@@ -1,0 +1,40 @@
+#
+# 1, To see more configuration properties goto: https://spring.io/projects/spring-boot#learn
+#
+# 2, How to read yaml data in the program?
+#     Use @Value("${propertyName1[0].propertyName2[0]}") before defining a variable
+#
+# 3, How to reference data in yaml?
+#     newProperty: S{oldProperty} add info
+#
+# 4, To use escape characters, you need to enclose the content in "".
+
+
+#fundmentals
+server:
+  port: 80
+
+
+#Console OutPut
+spring:
+  main:
+    banner-mode: console
+
+logging:
+  level:
+    root: info
+
+
+
+
+
+
+
+#Coustom
+# country: China
+# city: "Shi Jiazhuang"
+# name: "Cai Xukun"
+# hobby:
+#   - sing
+#   - dance
+#   - rap
