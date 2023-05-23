@@ -9,7 +9,10 @@ public class Book {
     private String author;
     private String publisher;
     private String category;
-    private int likes;
+    private String language;
+    private String description;
     private int readeds;
-    private int readings;
+    private int favors;
+    private int likes;
+    private int comments;
 }
