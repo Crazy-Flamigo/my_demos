@@ -6,9 +6,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jiahaowen.springboot_demo.dao.BookDao;
 import com.jiahaowen.springboot_demo.domain.Book;
 import com.jiahaowen.springboot_demo.services.IBookService;
+import javafx.print.Collation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -62,5 +65,22 @@ public class BookServiceImpl implements IBookService {
         IPage<Book> page =new Page<Book>(currentPage, PageSize);
         bookDao.selectPage(page, lqw);
         return page;
+    }
+
+    @Override
+    public List<Book> getFocus() {
+        ArrayList<Integer> focusList = new ArrayList<Integer>();
+        focusList.add(8);
+        focusList.add(10);
+        focusList.add(12);
+        focusList.add(2);
+        focusList.add(3);
+        focusList.add(4);
+
+        LambdaQueryWrapper<Book> lqw =new LambdaQueryWrapper<Book>();
+        for (int i =0; i<focusList.size();i++){
+            lqw.eq(Book::getId,focusList.get(i).intValue()).or();
+        }
+        return bookDao.selectList(lqw);
     }
 }

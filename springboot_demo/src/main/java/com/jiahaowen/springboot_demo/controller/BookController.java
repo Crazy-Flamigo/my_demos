@@ -46,11 +46,16 @@ public class BookController {
 //        return new R(true,bookService.getPage(currentPage,8));
 //    }
 
-
     //发送请求时使用 '?' + 键值对，可以直接把参数传过来
     @GetMapping( "/page={currentPage}")
     public R getPage(@PathVariable int currentPage,String param){
 
         return new R(true,bookService.getPage(currentPage,8,param));
+    }
+
+    @GetMapping( "/focus")
+    public R getFocus(){
+
+        return new R(true,bookService.getFocus());
     }
 }

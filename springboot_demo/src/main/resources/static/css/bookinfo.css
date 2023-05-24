@@ -1,0 +1,178 @@
+body{
+    background-color: black;
+    background-image: url('../img/backgroung.jpg');
+}
+
+
+.mainbody{
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    background-color: #002e36de;
+    overflow: hidden;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div, span , p {
+    caret-color: transparent;
+}
+
+
+
+
+
+/*顶部banner部分*/
+.banner{
+    background-color: #004653;
+    height: 150px;
+    margin-top: -70px;
+    transition: all 0.5s;
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.47);
+}
+
+.title{
+    position: absolute;
+    margin-top: 80px;
+    /*background-color: aqua;*/
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    float: left;
+}
+
+.tools{
+    float: right;
+}
+
+.banner:hover{
+    transform: translate(0,50px);
+    background-color: #008ea7;
+}
+.banner:hover .title{
+    font-size: 72px;
+    margin-top: 40px;
+}
+
+.banner:hover .title.iconfont{
+    font-size: 64px;
+}
+
+
+/*info部分*/
+.info{
+    position: relative;
+    child-align: auto;
+    height: 740px;
+    overflow: hidden;
+}
+
+.info img{
+    float: left;
+    margin-right: 60px;
+    position: absolute;
+    left: 80px;
+    top: 80px;
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.47);
+}
+
+.info .content{
+    float: left;
+    height: 600px;
+    position: absolute;
+    left: 580px;
+    top: 80px;
+}
+
+.info .content h1{
+    font-size: 80px;
+    color: white;
+    font-weight: bold;
+    font-family: 楷体;
+}
+
+.info .content p{
+    font-size: 24px;
+    color: white;
+    font-weight: 300;
+}
+
+/*功能区*/
+.fuctions{
+    position: relative;
+    height: 80px;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    background: linear-gradient(-45deg, #1d3354, #195953);
+    border-radius: 5%;
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.47);
+
+}
+
+.fuctions div{
+    position: relative;
+    font-size: 64px;
+    width: 14%;
+    float: left;
+    text-align: center;
+    color: white;
+    line-height: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.fuctions div.readed_num,
+.fuctions div.favor_num,
+.fuctions div.like_num{
+    text-align: left;
+    font-size: 32px;
+}
+
+.fuctions div .check {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    font-size: 0px;
+    color: rgba(54, 255, 187, 0);
+    font-weight: bolder;
+    transition: all 0.5s;
+
+}
+
+
+
+.fuctions div .check:hover {
+    font-size: 58px;
+    color: rgb(231, 58, 58);
+}
+
+.readed:hover,
+.favor:hover,
+.like:hover,
+.download:hover {
+    font-size: 80px;
+}
+
+.readed:hover{
+    color: #058fb6;
+}
+
+.favor:hover{
+    color: #f7ff15;
+}
+
+.like:hover{
+    color: #ff61b1;
+}
+
+
+
+
+
+

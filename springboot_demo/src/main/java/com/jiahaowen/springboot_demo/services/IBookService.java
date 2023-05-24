@@ -15,4 +15,6 @@ public interface IBookService {
 
 
     IPage<Book> getPage(int currentPage, int i, String param);
+
+    List<Book> getFocus();
 }
