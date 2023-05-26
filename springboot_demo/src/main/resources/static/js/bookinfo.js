@@ -1,4 +1,19 @@
 window.addEventListener('load',function(){
+    //顶部按钮功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //功能按钮动画
     var readed = document.querySelector('.readed');
     var favor = document.querySelector('.favor');
@@ -45,10 +60,50 @@ window.addEventListener('load',function(){
             position: [0, 0, 0],
             easing: 'easeOut'
         });
-
-
-
     });
+
+    ///获取书籍信息
+
+    /**
+     * 根据变量名获取匹配值
+     */
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    var id =getQueryString('id');
+    $.ajax("../../books/"+id,
+        {
+            type: "get",
+            success : function(data){
+                var html='';
+                console.log(data);
+                    //预处理
+                    var readeds = data.data.readeds
+                    var favors = data.data.favors
+                    var likes = data.data.likes
+
+
+                html+='<div class = "pic"> <img src="../img/books/'+ id +'.png" width="450" height="600">  </div>' +
+                    '            <div class = "content">' +
+                    '                <h1>'+data.data.name+'</h1>' +
+                    '                <p>作者：'+data.data.author+'</p>\n' +
+                    '                <p>出版社：'+data.data.publisher+'</p>\n' +
+                    '                <p>分类：'+data.data.category+'</p>\n' +
+                    '                <p>语言：'+data.data.language+'</p>\n' +
+                    '                <p>描述：'+data.data.description+'</p>\n' +
+                    '            </div>'
+                document.querySelector('.info').innerHTML =html;
+                document.querySelector('.readed_num').innerHTML = readeds;
+                document.querySelector('.favor_num').innerHTML = favors;
+                document.querySelector('.like_num').innerHTML = likes;
+            }
+        });
+
+
+
 
 
 });

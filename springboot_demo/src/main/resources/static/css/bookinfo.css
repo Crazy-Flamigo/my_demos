@@ -51,17 +51,37 @@ div, span , p {
     float: right;
 }
 
+.tools div span,
+.tools div a{
+    color:white;
+    font-size: 48px;
+    text-decoration: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.tools div span:hover,
+.tools div a:hover{
+    font-size: 60px;
+}
+
+
+
 .banner:hover{
-    transform: translate(0,50px);
+    margin-top: 0;
     background-color: #008ea7;
 }
 .banner:hover .title{
-    font-size: 72px;
-    margin-top: 40px;
+    font-size: 88px;
+    margin-top: 10px;
+}
+.banner .title span.iconfont{
+    color:rgb(137, 233, 48);
+    font-size: 64px;
 }
 
-.banner:hover .title.iconfont{
-    font-size: 64px;
+.banner:hover .title span.iconfont{
+    color: rgb(29, 255, 0);
 }
 
 

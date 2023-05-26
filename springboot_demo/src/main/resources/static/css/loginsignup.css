@@ -1,0 +1,141 @@
+body{
+    background-color: black;
+    background-image: url('../img/backgroung.jpg');
+}
+
+
+.mainbody{
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    background-color: #002e36de;
+    overflow: hidden;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div, span , p {
+    caret-color: transparent;
+}
+
+
+
+
+
+/*顶部banner部分*/
+.banner{
+    background-color: #004653;
+    height: 150px;
+    margin-top: -70px;
+    transition: all 0.5s;
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.47);
+}
+
+.title{
+    position: absolute;
+    margin-top: 80px;
+    /*background-color: aqua;*/
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    float: left;
+}
+
+.tools{
+    float: right;
+}
+
+.tools div span,
+.tools div a{
+    color:white;
+    font-size: 48px;
+    text-decoration: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.tools div span:hover,
+.tools div a:hover{
+    font-size: 60px;
+}
+
+
+
+.banner:hover{
+    margin-top: 0;
+    background-color: #008ea7;
+}
+.banner:hover .title{
+    font-size: 88px;
+    margin-top: 10px;
+}
+.banner .title span.iconfont{
+    color:rgb(137, 233, 48);
+    font-size: 64px;
+}
+
+.banner:hover .title span.iconfont{
+    color: rgb(29, 255, 0);
+}
+
+
+/*mainbox部分*/
+.mainbox{
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background-color: #005360;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.47);
+    margin-top: 80px;
+    border-radius: 5%;
+}
+
+.mainbox h1{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 48px;
+    color: white;
+}
+
+
+.mainbox div{
+    margin: auto;
+    margin-top:30px;
+    margin-bottom: 50px;
+    text-align: right;
+    color: white;
+    font-size: 24px;
+    width: 500px;
+    height: 65px;
+    line-height: 65px;
+    background: #005570;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.47);
+    transition: all 0.5s;
+}
+
+.mainbox div input{
+    width: 300px;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.mainbox div:hover {
+    background: #00668c;
+
+}
+
+.mainbox .confirm{
+    margin-top: 80px;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15%;
+}

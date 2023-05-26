@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到一起读书！</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css" \link>
+    <link rel="stylesheet" href="../css/loginsignup.css" \link>
+
+    <script src="../js/snabbt.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/loginsignup.js"></script>
+
+
+
+</head>
+<body>
+
+<div class="mainbody">
+    <!--顶部banner-->
+    <div class="banner">
+        <div class="loginsignup" style="margin-top: 90px;margin-right: 20px;float: right;font-size: 20px;color: #ffffff;">
+            <a href="loginsignup.html" style="text-decoration: none;color: white">登录</a><br><a href="loginsignup.html" style="text-decoration: none;color: white">注册</a>
+        </div>
+        <div class="tools">
+            <div style="margin-top: 25px;margin-right: 30px;">
+                <span class="iconfont"> &#xe75d;</span>
+                <span class="iconfont"> &#xe7e0;</span>
+                <span class="iconfont"> &#xe6cc;</span>
+                <span class="iconfont"> &#xe7cb;</span>
+            </div>
+            <div style="margin-top: 15px;margin-right: 30px;">
+                <a href="books.html" class="iconfont home" title="主页"> &#xe6b8;</a>
+                <span class="iconfont" > &#xe64c;</span>
+                <span class="iconfont" > &#xe68a;</span>
+                <span class="iconfont" > &#xe6b7;</span>
+            </div>
+        </div>
+
+        <div class="title">
+            <span class="iconfont"> &#xe742;</span>一起阅读
+        </div>
+    </div>
+
+    <!--注册-->
+    <div class="mainbox signup">
+        <h1>您好，请先注册</h1>
+        <div>
+            用户名：
+            <input class="name" onchange="nameChange()" placeholder="请输入您的用户名">
+        </div>
+        <div>
+            密码：
+            <input class="password" placeholder="请设置您的密码">
+        </div>
+
+        <div>
+            密码确认：
+            <input class="password2" placeholder="请再次输入您的密码">
+        </div>
+
+
+        <div class="confirm">
+            确认并注册
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+    function nameChange(){
+        var name = document.querySelector('.name');
+        var h1 = document.querySelector('.mainbox').querySelector('h1');
+        console.log(name.value)
+        if (name.value != ""){
+            h1.innerHTML = "欢迎您，"+ name.value     ;
+        }
+        else {
+            h1.innerHTML = "您好，请先注册";
+        }
+
+
+    }
+
+</script>
