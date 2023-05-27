@@ -143,7 +143,7 @@ window.addEventListener('load',function(){
                     var loginsignup = document.querySelector('.loginsignup')
                     console.log(data.flag)
                     if(data.flag == true){
-                        loginsignup.innerHTML = '<a style="text-decoration: none;color: white">'+name+'</a>';
+                        loginsignup.innerHTML = '<a style="text-decoration: none;color: white;font-size: 14px;">'+name+'</a>';
                     }
                     else {
                         h1.innerHTML='<font color=#ff2222>您输入的用户名或密码有误</font>'
