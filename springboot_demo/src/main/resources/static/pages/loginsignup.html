@@ -19,7 +19,7 @@
     <!--顶部banner-->
     <div class="banner">
         <div class="loginsignup" style="margin-top: 90px;margin-right: 20px;float: right;font-size: 20px;color: #ffffff;">
-            <a href="loginsignup.html" style="text-decoration: none;color: white">登录</a><br><a href="loginsignup.html" style="text-decoration: none;color: white">注册</a>
+            <a href="loginsignup.html?type=login" style="text-decoration: none;color: white">登录</a><br><a href="loginsignup.html?type=signup" style="text-decoration: none;color: white">注册</a>
         </div>
         <div class="tools">
             <div style="margin-top: 25px;margin-right: 30px;">
@@ -58,13 +58,37 @@
             <input class="password2" placeholder="请再次输入您的密码">
         </div>
 
-
-        <div class="confirm">
+        <a href="loginsignup.html?type=login" style="float: left;margin-left: 100px;margin-top: 50px;color: #00b7d7;font-size: 20px"> 已经有账号？点我登录</a>
+        <div class="confirm signup_btn">
             确认并注册
+        </div>
+    </div>
+
+    <!--登录-->
+    <div class="mainbox login">
+        <h1>欢迎</h1>
+        <div>
+            用户名：
+            <input class="name" onchange="nameChange()"  placeholder="请输入您的用户名">
+        </div>
+        <div>
+            密码：
+            <input class="password" placeholder="请输入您的密码">
+        </div>
+
+
+        <a href="loginsignup.html?type=signup" style="float: left;margin-left: 100px;margin-top: 50px;color: #00b7d7;font-size: 20px"> 还没有账号？点我注册</a>
+        <div class="confirm login_btn">
+            确认并登录
         </div>
 
 
     </div>
+
+
+
+
+
 
 
 
@@ -76,18 +100,9 @@
 
 <script>
 
-    function nameChange(){
-        var name = document.querySelector('.name');
-        var h1 = document.querySelector('.mainbox').querySelector('h1');
-        console.log(name.value)
-        if (name.value != ""){
-            h1.innerHTML = "欢迎您，"+ name.value     ;
-        }
-        else {
-            h1.innerHTML = "您好，请先注册";
-        }
 
 
-    }
+
+
 
 </script>

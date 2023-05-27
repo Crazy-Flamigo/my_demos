@@ -1,5 +1,6 @@
 package com.jiahaowen.springboot_demo.controller.utils;
 
+import com.jiahaowen.springboot_demo.domain.User;
 import lombok.Data;
 
 @Data
@@ -7,8 +8,6 @@ public class R {
     private Boolean flag;
     private Object data;
 
-    public R (){
-    }
 
     public R (Boolean flag){
         this.flag=flag;
