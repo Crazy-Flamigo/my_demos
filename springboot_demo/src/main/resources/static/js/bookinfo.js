@@ -10,6 +10,7 @@ window.addEventListener('load',function(){
     }
     var bookid =getQueryString('id');
     var userid;
+    var bookname;
     var check = document.querySelector(".check");
     //自动登录
     $.ajax("../../user/autologin",
@@ -142,6 +143,7 @@ window.addEventListener('load',function(){
                     var readeds = data.data.readeds
                     var favors = data.data.favors
                     var likes = data.data.likes
+                    bookname =data.data.name;
 
 
                     html+='<div class = "pic"> <img src="../img/books/'+ bookid +'.png" width="450" height="600">  </div>' +
@@ -236,6 +238,19 @@ window.addEventListener('load',function(){
                 }
 
             });});
+
+    download.addEventListener('click',function(){
+        if(userid==undefined){
+            alert("请先登录再操作！");
+            document.location.href="/pages/loginsignup.html?type=login";
+        }
+
+        document.location.href="/pages/bookdownload.html?id="+bookid;
+            });
+
+
+
+
 
 
 

@@ -194,5 +194,41 @@ div, span , p {
 
 
 
+/*下载*/
+.downloadbox{
+    position: relative;
+    height: 800px;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    background: linear-gradient(-45deg, #1d3354, #195953);
+    border-radius: 5%;
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.47);
+    padding: 20px;
+}
+
+.downloadbox h1{
+    margin-top: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 60px;
+
+}
+
+.downloadbox li{
+    text-align: center;
+    color: #bbbbbb;
+
+    margin-bottom: 40px;
+
+}
+
+.downloadbox li img{
+    cursor: pointer;
+
+}
+
+
+
 
 
