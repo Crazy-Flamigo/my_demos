@@ -115,6 +115,8 @@ window.addEventListener('load',function(){
                     type: "post",
                     success : function(data){
                         console.log(data);
+                        document.location.href="/pages/books.html";
+
                     }
                 });
         }
@@ -144,6 +146,8 @@ window.addEventListener('load',function(){
                     console.log(data.flag)
                     if(data.flag == true){
                         loginsignup.innerHTML = '<a style="text-decoration: none;color: white;font-size: 14px;">'+name+'</a>';
+                        document.location.href="/pages/books.html";
+
                     }
                     else {
                         h1.innerHTML='<font color=#ff2222>您输入的用户名或密码有误</font>'

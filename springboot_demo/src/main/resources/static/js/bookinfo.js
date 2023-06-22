@@ -1,16 +1,32 @@
 window.addEventListener('load',function(){
-    //顶部按钮功能
+    //自动登录
+    $.ajax("../../user/autologin",
+        {
+            type: "post",
+            success : function(data){
+                console.log(data);
+                var loginsignup = document.querySelector('.loginsignup')
+                console.log(data.flag)
+                if(data.flag == true){
+                    loginsignup.innerHTML = '<div style="text-decoration: none;color: white;font-size: 14px;text-align: center;width:80px; ">'+data.data.name+'<span style="color: greenyellow">，已登录</span>' +'</div>';
+                }
 
 
+            }
 
+        });
 
+    //登出
+    document.querySelector('.logout').addEventListener('click',function(){
+        $.ajax("../../user/logout",
+            {
+                type: "post",
+                success : function(data){
+                    document.location.href="/pages/books.html";
+                }
 
-
-
-
-
-
-
+            });
+    });
 
 
 

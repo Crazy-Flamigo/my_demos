@@ -4,6 +4,7 @@ import com.jiahaowen.springboot_demo.dao.UserDao;
 import com.jiahaowen.springboot_demo.domain.User;
 import com.jiahaowen.springboot_demo.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.Cookie;
 import org.springframework.stereotype.Service;
 
 
@@ -18,7 +19,13 @@ public class UserServiceImpl implements IUserService {
     public User login(String name, String password) {
         LambdaQueryWrapper<User> lqw =new LambdaQueryWrapper<User>();
         lqw.eq(User::getName,name).eq(User::getPassword,password);
-        return userDao.selectOne(lqw);
+        User user = userDao.selectOne(lqw);
+
+
+
+
+
+        return user;
     }
 
     @Override
