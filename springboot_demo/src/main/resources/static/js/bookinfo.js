@@ -9,8 +9,9 @@ window.addEventListener('load',function(){
         if (r != null) return unescape(r[2]); return null;
     }
     var bookid =getQueryString('id');
-    var userid;
-    var bookname;
+    var userid="";
+    var username="";
+    var bookname="";
     var check = document.querySelector(".check");
 
     var userpic=document.querySelector(".userpic");
@@ -25,6 +26,7 @@ window.addEventListener('load',function(){
                 if(data.flag == true){
                     loginsignup.innerHTML = '<div style="text-decoration: none;color: white;font-size: 14px;text-align: center;width:80px; ">'+data.data.name+'<span style="color: greenyellow">，已登录</span>' +'</div>';
                     userid=data.data.id;
+                    username = data.data.name;
                     userpic.innerHTML = '<img src="/image/user/'+ data.data.id +'.png" alt="" width="50" height="50">';
 
                     //查询
@@ -256,6 +258,9 @@ window.addEventListener('load',function(){
     var currentpage=1;
     ////////////获取评论信息
     function getComments(){
+        console.log(bookid);
+
+
         $.ajax("../../bookcomment/page="+currentpage+"/bookid="+bookid,
             {
                 type: "get",
@@ -271,7 +276,7 @@ window.addEventListener('load',function(){
                             +'<div class="fuctions2"><div class="iconfont zan" >&#xe7e1;'+data.records[i].likes+'</div>赞一个<div class="iconfont cai" >&#xe815;'+data.records[i].dislike+'</div> 踩一下</div></li>' ;
 
                     }
-                    if (html===""){
+                    if (html===""&&currentpage!==1){
                         alert("暂无更多评论！");
                     }else {
                         document.querySelector('.commentbox').innerHTML+=html;
@@ -289,6 +294,39 @@ window.addEventListener('load',function(){
     });
 
 
+
+    ///////发表评论
+
+    var sendCommentButton=document.querySelector(".sendCommentButton");
+    sendCommentButton.addEventListener('click',function (){
+       var commentHead = document.querySelector('.commentHeadSend').querySelector('input').value;
+       var commentBody = document.querySelector('.commentBodySend').querySelector('textarea').value;
+       if(userid===""){
+           alert('请先登录再操作！');
+           document.location.href="/pages/loginsignup.html?type=login";
+       }else if(commentHead===""){
+           alert('请输入评论标题！');
+       }else if(commentBody===""){
+           alert('请输入评论内容！');
+       }else {
+           $.ajax("../../bookcomment/send?userid="+userid+"&bookid="+bookid+"&commenthead="+commentHead+"&commentbody="+commentBody+"&username="+username,
+               {
+                   type: "get",
+                   success : function(data){
+                       console.log(data);
+                       alert('评论成功！');
+                       location.reload();
+                   }
+
+               });
+
+       }
+
+
+
+
+
+    });
 
 
 

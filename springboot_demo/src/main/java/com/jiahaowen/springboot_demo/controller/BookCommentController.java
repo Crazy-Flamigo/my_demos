@@ -19,4 +19,15 @@ public class BookCommentController {
     public R getPage(@PathVariable int currentPage,@PathVariable int bookid){
         return new R(true,bookCommentService.getPage(bookid,currentPage,10));
     }
+
+    @GetMapping("/send")
+    public R sendComment(int userid,int bookid,String commenthead,String commentbody,String username){
+        return new R(bookCommentService.addComment(userid,bookid,commenthead,commentbody,username) );
+    }
+
+
+
+
+
+
 }
