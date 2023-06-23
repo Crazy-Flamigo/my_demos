@@ -12,9 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.ImageObserver;
+
 
 @RestController
 @RequestMapping("/user")

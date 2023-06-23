@@ -253,6 +253,43 @@ window.addEventListener('load',function(){
 
 
 
+    var currentpage=1;
+    ////////////获取评论信息
+    function getComments(){
+        $.ajax("../../bookcomment/page="+currentpage+"/bookid="+bookid,
+            {
+                type: "get",
+                success : function(data){
+                    console.log(data);
+                    var html="";
+
+                    data=data.data;
+
+                    for(var i = 0; i< data.records.length; i++){
+                        html+='<li><div class="userbox"><div class="userpicMid"><img src="/image/user/'+data.records[i].userid+'.png" width="120" height="120"></div> <div class="username">'+data.records[i].username+'</div> </div>'
+                            +'<div class="comments"><div class="commentHead" >'+data.records[i].commenthead+'</div> <div class="commentBody">'+data.records[i].commentbody+'</div></div>'
+                            +'<div class="fuctions2"><div class="iconfont zan" >&#xe7e1;'+data.records[i].likes+'</div>赞一个<div class="iconfont cai" >&#xe815;'+data.records[i].dislike+'</div> 踩一下</div></li>' ;
+
+                    }
+                    if (html===""){
+                        alert("暂无更多评论！");
+                    }else {
+                        document.querySelector('.commentbox').innerHTML+=html;
+                        currentpage++;
+                    }
+                }
+            });
+    }
+    getComments();
+
+
+    var button_more = document.querySelector('.button_more')
+    button_more.addEventListener('click',function (){
+        getComments();
+    });
+
+
+
 
 
 
