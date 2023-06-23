@@ -13,5 +13,8 @@ public class User {
     private String password;
     private String authority;
 
+    @TableField(select = false)
+    private String img;
+
 
 }

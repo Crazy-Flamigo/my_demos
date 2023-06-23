@@ -139,3 +139,24 @@ div, span , p {
     cursor: pointer;
     border-radius: 15%;
 }
+
+
+
+/*mainbox部分*/
+.signup{
+    height: 1200px;
+}
+
+.signup div.confirm.signup_btn{
+
+}
+
+div.prvid{
+    height: 300px;
+    width: 300px;
+}
+
+.mainbox div:hover {
+    background: #00668c;
+
+}

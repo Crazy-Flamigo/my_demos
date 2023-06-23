@@ -11,7 +11,8 @@ window.addEventListener('load',function(){
     var bookid =getQueryString('id');
     var userid;
     var bookname;
-    var check = document.querySelector(".check");
+
+    var userpic=document.querySelector(".userpic");
     //自动登录
     $.ajax("../../user/autologin",
         {
@@ -23,6 +24,7 @@ window.addEventListener('load',function(){
                 if(data.flag == true){
                     loginsignup.innerHTML = '<div style="text-decoration: none;color: white;font-size: 14px;text-align: center;width:80px; ">'+data.data.name+'<span style="color: greenyellow">，已登录</span>' +'</div>';
                     userid=data.data.id;
+                    userpic.innerHTML = '<img src="/image/user/'+ data.data.id +'.png" alt="" width="50" height="50">';
                 }
             }
         });
@@ -56,7 +58,7 @@ window.addEventListener('load',function(){
                     bookname =data.data.name;
 
 
-                    html+='<div class = "pic"> <img src="../img/books/'+ bookid +'.png" width="450" height="600">  </div>' +
+                    html+='<div class = "pic"> <img src="/image/book/'+ bookid +'.png" width="450" height="600">  </div>' +
                         '            <div class = "content">' +
                         '                <h1>'+data.data.name+'</h1>' +
                         '                <p>作者：'+data.data.author+'</p>\n' +

@@ -4,6 +4,7 @@ package com.jiahaowen.springboot_demo.controller;
 import com.jiahaowen.springboot_demo.controller.utils.R;
 import com.jiahaowen.springboot_demo.domain.User;
 import com.jiahaowen.springboot_demo.services.IUserService;
+import com.sun.xml.internal.ws.encoding.ImageDataContentHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.ImageObserver;
 
 @RestController
 @RequestMapping("/user")
@@ -58,9 +62,14 @@ public class UserController {
 
 
 
+
+
+
     @PostMapping("/signup")
     @ResponseBody
-    public R signup(User user,HttpServletRequest request, HttpServletResponse response){
+    public R signup(User user, HttpServletRequest request, HttpServletResponse response){
+
+
 
 
         //cookies

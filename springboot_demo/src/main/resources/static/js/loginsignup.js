@@ -85,6 +85,13 @@ window.addEventListener('load',function(){
 
 
 
+
+
+
+
+
+
+
     //注册
     var signup_btn = document.querySelector('.signup_btn');
 
@@ -103,23 +110,39 @@ window.addEventListener('load',function(){
             password_same=true;
         }
 
-        if (signup_avilable && password_same){
-            var user = new Object();
-            user.name = name;
-            user.password = password;
-            user.authority = "user";
+        var img = document.querySelector('.prvid').lastChild
+        console.log(img.width)
+        console.log(img.height)
 
-            $.ajax("../../user/signup",
-                {
-                    data:user,
-                    type: "post",
-                    success : function(data){
-                        console.log(data);
-                        document.location.href="/pages/books.html";
+        if (img.src==undefined){
+            alert('请按要求填写完整信息，并上传头像！')
 
-                    }
-                });
         }
+        else {
+            var img64 = img.src.replace("data:image/png;base64,","")
+
+            if (signup_avilable && password_same && img64!==""){
+                var user = new Object();
+                user.name = name;
+                user.password = password;
+                user.authority = "user";
+                user.img = img64;
+
+
+                $.ajax("../../user/signup",
+                    {
+                        data:user,
+                        type: "post",
+                        success : function(data){
+                            console.log(data);
+                            document.location.href="/pages/books.html";
+
+                        }
+                    });
+            }else {
+                alert('请按要求填写完整信息，并上传头像！')
+            }}
+
         });
 
 
@@ -157,6 +180,8 @@ window.addEventListener('load',function(){
                 }
 
             });});
+
+
 
 
 

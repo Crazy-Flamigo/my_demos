@@ -228,6 +228,20 @@ div, span , p {
 
 }
 
+/*评论*/
+.commentbox{
+    position: relative;
+    height: 800px;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    background: linear-gradient(-45deg, #1d3354, #195953);
+    border-radius: 5%;
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.47);
+    padding: 20px;
+
+}
+
 
 
 
